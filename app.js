@@ -17,11 +17,11 @@ io.on('connection', socket => {
         io.emit('countUserOnline', countUserOnline)
     })
     socket.on('message', param => {
-        console.log('user mengirim pesan')
+        console.log('user send message')
         io.emit('message', param)
     })
     socket.on('disconnect', param => {
-        console.log('user keluar')
+        console.log('user left')
         countUserOnline--;
         io.emit('countUserOnline', countUserOnline)
     })
